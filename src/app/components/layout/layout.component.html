@@ -1,0 +1,22 @@
+<div class="layout">
+    <nav>
+        <h1 class="brandName">Ejara Project</h1>
+        <p class="profile">Logged In: {{userInfo}}</p>
+        <button class="logout" (click)="logout()"><i class="fa fa-sign-out fa-sm" aria-hidden="true"></i> Logout</button>
+    </nav>
+    <div class="main">
+        <aside>
+            <h1 class="asideHeader">Navigation</h1>
+            <ul class="navLinks">
+                <li class="navLink"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"><i class="fa fa-angle-right fa-sm" aria-hidden="true"></i> Dashboard</a></li>
+                <li class="navLink"><a routerLink="/transaction" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"><i class="fa fa-angle-right fa-sm" aria-hidden="true"></i> Transactions</a></li>
+            </ul>
+        </aside>
+        <section>
+            <h3 class="pageHeaderTitle"><i class="fa fa-arrow-right fa-sm" aria-hidden="true"></i> {{routeName}}</h3>
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</div>

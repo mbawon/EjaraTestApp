@@ -1,0 +1,25 @@
+.transactionDetails {
+    padding: 80px 15px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    border: 2px solid #eee;
+    text-align: left;
+}
+th {
+    border: 2px solid #eee;
+    font-weight: 500;
+    background-color: #fafafa;
+    text-align: left;
+    padding: 15px;
+    font-weight: bolder;
+}
+tr td{
+    padding: 15px;
+    border: 2px solid #eee;
+}
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}

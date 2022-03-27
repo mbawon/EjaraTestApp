@@ -1,0 +1,110 @@
+.layout {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+nav {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    padding-right: 15px;
+    background-color: #4f26eb;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    z-index: 9999999;
+}
+
+.profile {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.logout {
+    padding: 10px 15px;
+    margin: auto 0;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.logout:hover {
+    color: #4f26eb;
+}
+.brandName{
+    color: #ffffff;
+    margin: auto 15px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+}
+.brand {
+    height: 100%;
+    width: 80px;
+}
+
+.main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+aside {
+    height: 100vh;
+    flex: 1;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+aside::-webkit-scrollbar {
+    display: none;
+}
+
+aside:hover::-webkit-scrollbar {
+    display: none;
+}
+
+.asideHeader, .pageHeaderTitle {
+    width: 100%;
+    padding: 20px 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.navLinks {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.navLink a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.active{
+    border-right: 5px solid #4f26eb;
+}
+section {
+    flex: 5;
+    overflow-y: auto;
+}
+
+.pageHeaderTitle {
+    position: fixed;
+    background-color: #eeeeee;
+    z-index: 9999;
+}

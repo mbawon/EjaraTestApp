@@ -1,0 +1,25 @@
+<div class="loginWrapper">
+    <div class="brandImage">
+        <img src="https://ejara-logo.s3.us-east-2.amazonaws.com/email-logo.png" alt="banner" class="brandLogo" />
+    </div>
+    <div class="login">
+        <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" class="loginForm">
+            <h1 class="loginTitle">Ejara Test Project<br /> Login</h1>
+            <input type="text" name="username" [(ngModel)]="form.username" #username="ngModel" placeholder="Username"
+                class="inputControl mb" required />
+            <div class="passwordWrap">
+                <input [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="form.password" #password="ngModel"
+                    placeholder="Password" class="inputControl mb" required />
+                <i class="fa fa-eye-slash fa-lg" *ngIf="!showPassword else toggled" (click)="togglePassword()"></i>
+                <ng-template #toggled>
+                    <i class="fa fa-eye fa-lg" (click)="togglePassword()"></i>
+                </ng-template>
+            </div>
+            <div *ngIf="isLoginFailed">{{errorMessage}}</div>
+            <button type="submit" class="inputBtn" [disabled]="f.form.invalid || processing">
+                Log In
+            </button>
+        </form>
+    </div>
+
+</div>

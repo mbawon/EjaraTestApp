@@ -1,0 +1,36 @@
+<div class="dashboard" *ngIf="(totals | json) != '{}' else loading">
+    <div class="dashboardTotals">
+        <div class="dashboardCard">
+            <div class="cardHeader">Transactions</div>
+            <div class="cardBody">
+                {{totals.totalCount}}
+            </div>
+        </div>
+        <div class="dashboardCard">
+            <div class="cardHeader">Raw Amount</div>
+            <div class="cardBody">
+                {{totals.totalRawAmnt | currencyFormater}}
+            </div>
+        </div>
+        <div class="dashboardCard">
+            <div class="cardHeader">Net Amount</div>
+            <div class="cardBody">
+                {{totals.totalNetAmnt | currencyFormater}}
+            </div>
+        </div>
+        <div class="dashboardCard">
+            <div class="cardHeader">Crypto Amount</div>
+            <div class="cardBody">
+                {{totals.totalCryptoAmnt | currencyFormater}}
+            </div>
+        </div>
+    </div>
+    <div class="dashboardChart">
+        <p>
+            Chart 
+        </p>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="dashboard loading">Loading...</div>
+</ng-template>

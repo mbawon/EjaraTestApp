@@ -1,0 +1,50 @@
+<div class="transactionDetails">
+    <table>
+        <thead>
+            <th>Field</th>
+            <th>Values</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Date Created</td>
+                <td>{{transactionDetail.date_creation | dateFormater}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Type</td>
+                <td>{{transactionDetail.transaction_type}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Status</td>
+                <td>{{transactionDetail.transaction_status}}</td>
+            </tr>
+            <tr>
+                <td>Emitter</td>
+                <td>{{transactionDetail.emitter}}</td>
+            </tr>
+            <tr>
+                <td>Recipient</td>
+                <td>{{transactionDetail.receiver}}</td>
+            </tr>
+            <tr>
+                <td>Raw Amount</td>
+                <td>{{transactionDetail.amount_raw | currencyFormater}}</td>
+            </tr>
+            <tr>
+                <td>Net Amount</td>
+                <td>{{transactionDetail.amount_net | currencyFormater}}</td>
+            </tr>
+            <tr>
+                <td>Fiat Currency</td>
+                <td>{{transactionDetail.fiat_currency}}</td>
+            </tr>
+            <tr>
+                <td>Crypto Currency</td>
+                <td>{{transactionDetail.crypto_currency}}</td>
+            </tr>
+            <tr>
+                <td>Crypto Amount</td>
+                <td>{{transactionDetail.crypto_amount | currencyFormater}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

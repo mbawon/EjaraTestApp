@@ -1,0 +1,40 @@
+.dashboard{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 15px;
+}
+.dashboardTotals{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dashboardCard{
+    flex: 2;
+    padding: 15px;
+    margin-right: 15px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.cardBody{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+.cardHeader{
+    font-size: 16px;
+    text-align: center;
+}
+.dashboardCard:last-child{
+    margin-right: 0;
+}
+.dashboardChart{
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}

@@ -1,0 +1,139 @@
+.transactionList {
+    padding: 80px 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+thead, tbody {
+    border: 1px solid #ccc;
+}
+
+tbody {
+    border-bottom: 0;
+    text-align: center;
+}
+
+th {
+    position: relative;
+    font-weight: 500;
+    background-color: #fafafa;
+    border-right: 2px solid #eee;
+    cursor: pointer;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+tfoot tr {
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+.fa-sort{
+    position: absolute;
+    right: 5px;
+    top: 13px;
+    color: #ccc;
+}
+
+.paginationWrap {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}
+
+.card {
+    border: 1px solid #eee;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.searchBarHeader {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    background-color: #eee;
+}
+.searchBarBody{
+    display: flex;
+    flex-direction: row;
+}
+.searchBarInputs {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #ffffff;
+    padding: 10px;
+
+}
+form{
+    flex: 1;
+}
+.searchInput {
+    width: 70%;
+    height: 39px;
+    margin: auto 10px auto 0;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+
+.dateRange {
+    width: 70%;
+    margin: auto 0px auto 0;
+}
+
+.filterBtn {
+    width: 200px;
+    margin: auto 15px auto 0;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #7600eb;
+    color: #ffffff;
+}
+.refreshBtn{
+    /* width: 200px; */
+    background-color: #7600eb;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    margin: auto 15px auto 0;
+}

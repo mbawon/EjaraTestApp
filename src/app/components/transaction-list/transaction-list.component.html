@@ -1,0 +1,102 @@
+<div class="transactionList" *ngIf="transactionList.length > 0 else checkStatus">
+    <div class="searchBar">
+        <h1 class="searchBarHeader"><i class="fa fa-filter fa-sm"></i> Filter Transactions</h1>
+        <div class="searchBarBody">
+            <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                <div class="searchBarInputs">
+                    <select name="transactionStatus" [(ngModel)]="form.transactionStatus" #transactionStatus="ngModel"
+                        class="searchInput">
+                        <option value="" hidden>Select transaction status</option>
+                        <!-- <option value="all">All</option> -->
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                    <select name="cryptoCurrency" [(ngModel)]="form.cryptoCurrency" #cryptoCurrency="ngModel"
+                        class="searchInput">
+                        <option value="" hidden>Select crypto currency</option>
+                        <!-- <option value="all">All</option> -->
+                        <option value="XTZ">XTZ</option>
+                        <option value="ETH">ETH</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                    <div class="dateRange">
+                        <date-range-picker [(dateRange)]="dateRange"></date-range-picker>
+                    </div>
+                    <button type="submit" class="filterBtn"><i class="fa fa-filter fa-sm"></i> Filter</button>
+                </div>
+            </form>
+            <button class="refreshBtn" (click)="handleRefresh()"><i class="fa fa-refresh fa-sm"></i> Reload </button>
+        </div>
+    </div>
+    <div *ngIf="!searching else processing">
+        <table>
+            <thead>
+                <th [appSort]="transactionList" data-order="desc" data-name="date_creation" scope="col">Date<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="transaction_type" scope="col">Type<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="transaction_status" scope="col">Status<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="emitter" scope="col">Emitter<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="receiver" scope="col">Recipient<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="amount_raw" scope="col">Raw Amount<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="amount_net" scope="col">Net Amount<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="fiat_currency" scope="col">Fiat Currency<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="crypto_currency" scope="col">Crypto
+                    Currency<i class="fa fa-sort fa-sm"></i></th>
+                <th [appSort]="transactionList" data-order="desc" data-name="crypto_amount" scope="col">Amount<i
+                        class="fa fa-sort fa-sm"></i></th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactionList | paginate: config" (click)="handleRow(transaction)">
+                    <td>{{transaction.date_creation | dateFormater}}</td>
+                    <td>{{transaction.transaction_type}}</td>
+                    <td>{{transaction.transaction_status}}</td>
+                    <td>{{transaction.emitter}}</td>
+                    <td>{{transaction.receiver}}</td>
+                    <td>{{transaction.amount_raw | currencyFormater}}</td>
+                    <td>{{transaction.amount_net | currencyFormater}}</td>
+                    <td>{{transaction.fiat_currency}}</td>
+                    <td>{{transaction.crypto_currency}}</td>
+                    <td>{{transaction.crypto_amount | currencyFormater}}</td>
+                    <td><i class="fa fa-ellipsis-v fa-2x"></i></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{totalRawAmnt | currencyFormater}}</td>
+                    <td>{{totalNetAmnt | currencyFormater}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{totalCryptoAmnt | currencyFormater}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="paginationWrap">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
+    </div>
+</div>
+
+<ng-template #processing>
+    <div class="loading">
+        No record found
+    </div>
+</ng-template>
+
+<ng-template #checkStatus>
+    <div class="transactionList loading" *ngIf="!responseError">Loading...</div>
+    <div class="transactionList loading" *ngIf="responseError">responseError</div>
+</ng-template>

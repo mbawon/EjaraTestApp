@@ -1,0 +1,51 @@
+.loginWrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.brandImage,.login{
+    width: 50%;
+}
+.brandImage{
+    position: relative;
+    background-color: #7600eb;
+    overflow: hidden;
+}
+.brandLogo{
+    width: 100%;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginForm{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.loginTitle{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.inputBtn{
+    margin-top: 15px;
+    font-size: 24px;
+}
+.inputBtn:disabled{
+    background-color: #eeeeee;
+    color: #cccccc;
+}
+.passwordWrap{
+    position: relative;
+}
+.fa-eye-slash, .fa-eye{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
